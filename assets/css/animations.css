@@ -1,0 +1,199 @@
+/* ============================================
+   前海聚英官网 - 动画效果
+   ============================================ */
+
+/* Hero Particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-particle 8s infinite;
+}
+
+@keyframes float-particle {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1);
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-1);
+  font-size: 0.8rem;
+  animation: bounce-down 2s infinite;
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Counter animation */
+.counter-animate {
+  display: inline-block;
+}
+
+/* Card hover glow effect */
+.glow-on-hover {
+  position: relative;
+}
+
+.glow-on-hover::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), transparent, rgba(0, 102, 204, 0.1));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.glow-on-hover:hover::after {
+  opacity: 1;
+}
+
+/* Typing effect */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Stagger animation delay */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Smooth page transitions */
+.page-transition {
+  animation: page-enter 0.4s ease;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading shimmer */
+.shimmer {
+  background: linear-gradient(90deg,
+    var(--dark-3) 25%,
+    var(--dark-4) 50%,
+    var(--dark-3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Pulse for CTA buttons */
+.pulse-cta {
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(0, 198, 255, 0);
+  }
+}
+
+/* Image zoom on hover */
+.zoom-hover {
+  overflow: hidden;
+}
+
+.zoom-hover img,
+.zoom-hover svg {
+  transition: transform 0.5s ease;
+}
+
+.zoom-hover:hover img,
+.zoom-hover:hover svg {
+  transform: scale(1.08);
+}
+
+/* Gradient border animation */
+.gradient-border {
+  position: relative;
+  background: var(--dark-3);
+  border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--accent), var(--primary), var(--accent));
+  border-radius: inherit;
+  z-index: -1;
+  background-size: 200% 200%;
+  animation: gradient-rotate 3s ease infinite;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Number counter */
+[data-count] {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,139 @@
+/* ============================================
+   前海聚英官网 - 响应式补充样式
+   ============================================ */
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .cta-section,
+  .hero-particles,
+  .hero-grid,
+  .mobile-toggle,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  h1, h2, h3, h4 {
+    color: black;
+  }
+
+  p {
+    color: #333;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode is default, but handle system preference */
+@media (prefers-color-scheme: light) {
+  /* Keep dark theme as it's the brand identity */
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+.form-control:focus-visible,
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (forced-colors: active) {
+  .btn-primary {
+    border: 2px solid;
+  }
+
+  .feature-card,
+  .product-card,
+  .solution-card,
+  .cert-card {
+    border: 1px solid;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Ultra-wide */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  h1 { font-size: 4.2rem; }
+  h2 { font-size: 3rem; }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  html { font-size: 14px; }
+
+  .hero h1 { font-size: 1.6rem; }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  .feature-card:hover,
+  .product-card:hover,
+  .solution-card:hover,
+  .cert-card:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .lang-switcher:hover .lang-dropdown {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .lang-switcher.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+}
