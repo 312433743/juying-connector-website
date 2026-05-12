@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="前海聚英新闻动态 - 公司动态、产品资讯、技术文章、行业方案。">
+  <title>新闻动态 | 前海聚英 - 推拉自锁连接器</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    .news-filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gradient-primary);
+      color: #fff;
+      border-color: transparent;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .news-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .news-item:hover {
+      transform: translateX(4px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .news-date-box {
+      min-width: 72px;
+      text-align: center;
+      padding: 12px;
+      background: var(--gradient-primary);
+      border-radius: 10px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .news-date-box .day {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .news-date-box .month {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+    .news-content {
+      flex: 1;
+    }
+    .news-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .tag-tech { background: #e3f2fd; color: #1565c0; }
+    .tag-product { background: #fff3e0; color: #e65100; }
+    .tag-company { background: #e8f5e9; color: #2e7d32; }
+    .tag-solution { background: #f3e5f5; color: #7b1fa2; }
+    .news-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .news-item:hover .news-title {
+      color: var(--accent-primary);
+    }
+    .news-excerpt {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .featured-news {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .featured-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .featured-img {
+      height: 200px;
+      background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 48px;
+    }
+    .featured-body {
+      padding: 24px;
+    }
+    .featured-body .news-title {
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      .featured-news { grid-template-columns: 1fr; }
+      .news-item { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="container">
+      <a href="../" class="logo">
+        <div class="logo-icon">JY</div>
+        <div class="logo-text">前海聚英<span>QIANHAI JUYING</span></div>
+      </a>
+      <nav class="nav">
+        <div class="nav-links" id="navLinks">
+          <a href="../">首页</a>
+          <a href="../products/">产品中心</a>
+          <a href="../solutions/">行业方案</a>
+          <a href="../news/" class="active">新闻动态</a>
+          <a href="../shop/">在线商城</a>
+          <a href="../about/">关于我们</a>
+          <a href="../contact/">联系我们</a>
+        </div>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn">🌐 中文 <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="lang-dropdown">
+            <a href="../news/" class="active">🇨🇳 中文</a>
+            <a href="/en/news/">🇬🇧 English</a>
+          </div>
+        </div>
+      </nav>
+      <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-content">
+        <h1>新闻动态</h1>
+        <p>公司动态 · 产品资讯 · 技术文章 · 行业方案</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured News -->
+  <section class="section">
+    <div class="container">
+      <div class="featured-news">
+        <div class="featured-card">
+          <div class="featured-img">🔗</div>
+          <div class="featured-body">
+            <span class="news-tag tag-tech">技术文章</span>
+            <h3 class="news-title">前海聚英连接器应用及接线原理</h3>
+            <p class="news-excerpt">详细介绍推拉自锁连接器的工作原理、接线方法及应用场景，帮助工程师快速选型和使用。</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-img" style="background:linear-gradient(135deg,#0d2818 0%,#1a4731 50%,#10b981 100%);">🏥</div>
+          <div class="featured-body">
+            <span class="news-tag tag-solution">行业方案</span>
+            <h3 class="news-title">医疗连接器服务及产品方案</h3>
+            <p class="news-excerpt">前海聚英提供广泛的医疗连接器产品，使用FDA批准的材料（PSU、PEI），满足医疗设备严苛要求。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="news-filters">
+        <button class="filter-btn active">全部</button>
+        <button class="filter-btn">公司动态</button>
+        <button class="filter-btn">产品资讯</button>
+        <button class="filter-btn">技术文章</button>
+        <button class="filter-btn">行业方案</button>
+      </div>
+
+      <!-- News List -->
+      <div class="news-list">
+        <a class="news-item" href="#">
+          <div class="news-date-box">
+            <div class="day">08</div>
+            <div class="month">2025.09</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-company">公司动态</span>
+            <h3 class="news-title">在深圳拥有18年连接器生产经验和研发</h3>
+            <p class="news-excerpt">前海聚英始创于2007年，深耕连接器行业18年，拥有800+系列、20000余款产品，服务海内外10000+客户，已定制超8000款产品方案。</p>
+          </div>
+        </a>
+
+        <a class="news-item" href="#">
+          <div class="news-date-box">
+            <div class="day">15</div>
+            <div class="month">2021.11</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-tech">技术文章</span>
+            <h3 class="news-title">前海聚英连接器应用及接线原理</h3>
+            <p class="news-excerpt">推拉自锁连接器的核心原理：通过推拉动作实现快速连接和断开，断开状态下自动密封防泄漏，连接后信号传输稳定可靠。</p>
+          </div>
+        </a>
+
+        <a class="news-item" href="#">
+          <div class="news-date-box">
+            <div class="day">15</div>
+            <div class="month">2021.11</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-solution">行业方案</span>
+            <h3 class="news-title">医疗连接器服务及产品方案</h3>
+            <p class="news-excerpt">前海聚英提供广泛的医疗连接器产品，使用FDA批准的材料（PSU/PEI），以PSU为主体材料，满足医疗设备对安全性和可靠性的严苛要求。</p>
+          </div>
+        </a>
+
+        <a class="news-item" href="#">
+          <div class="news-date-box">
+            <div class="day">15</div>
+            <div class="month">2021.11</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-product">产品资讯</span>
+            <h3 class="news-title">圆形连接器产品介绍——金属B系列</h3>
+            <p class="news-excerpt">金属B系列推拉自锁连接器，兼容LEMO B系列，提供EGG/EXG/ZEG等多种型号，2-64芯位可选，广泛应用于医疗器械、工业自动化等领域。</p>
+          </div>
+        </a>
+
+        <a class="news-item" href="#">
+          <div class="news-date-box">
+            <div class="day">15</div>
+            <div class="month">2021.11</div>
+          </div>
+          <div class="news-content">
+            <span class="news-tag tag-product">产品资讯</span>
+            <h3 class="news-title">前海聚英连接器 防水系列介绍</h3>
+            <p class="news-excerpt">K系列/T系列防水连接器，防水等级IP50/IP67，方形/圆形外壳设计，适用于工业设备、轨道交通、新能源、户外设备等恶劣环境。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo-icon">JY</div>
+            <div class="logo-text">前海聚英<span>QIANHAI JUYING</span></div>
+          </div>
+          <p class="footer-desc">专业推拉自锁连接器制造商<br>LEMO/ODU国产替代方案</p>
+        </div>
+        <div class="footer-col">
+          <h4>产品中心</h4>
+          <a href="../products/b-series/">金属B系列</a>
+          <a href="../products/k-series/">K系列防水</a>
+          <a href="../products/s-series/">S系列超微型</a>
+        </div>
+        <div class="footer-col">
+          <h4>在线商城</h4>
+          <a href="https://www.taobao.com/list/dianpu/328734118.htm" target="_blank">淘宝企业店</a>
+          <a href="https://shop1843i6m74m700.1688.com/" target="_blank">1688旗舰店</a>
+          <a href="https://18sz.en.alibaba.com/" target="_blank">阿里国际站</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <p>全国统一客服热线</p>
+          <p style="font-weight:700;font-size:18px;">0755-23322028</p>
+          <p>0755-88218887</p>
+          <p>jyjm@18sz.cn</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2014-2025 前海聚英（深圳）精密技术有限公司 All rights reserved</p>
+        <p>粤ICP备19151467号-1</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
