@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="前海聚英产品中心 - B系列推拉自锁连接器、K系列方形外壳连接器、S系列超微型连接器，兼容LEMO/ODU。">
+  <meta name="description" content="前海聚英产品中心 - 800+系列20000余款推拉自锁连接器，金属B/K/S/F/T系列、塑料P系列、广濑系列、螺纹式、新能源、线束定制、气路连接器，兼容LEMO/ODU。">
   <title>产品中心 | 前海聚英 - 推拉自锁连接器</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,106 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    /* Series Overview Cards */
+    .series-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .series-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .series-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 32px rgba(0,198,255,0.15);
+    }
+    .series-card-image {
+      height: 140px;
+      background: rgba(0,198,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .series-card-body {
+      padding: 20px;
+    }
+    .series-card-body h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .series-card-body p {
+      font-size: 13px;
+      color: var(--gray-2);
+      margin-bottom: 12px;
+    }
+    .series-card-count {
+      font-size: 12px;
+      color: var(--primary);
+      background: rgba(0,198,255,0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    /* Product image cards */
+    .product-item-image img {
+      transition: transform 0.3s ease;
+    }
+    .product-item:hover .product-item-image img {
+      transform: scale(1.05);
+    }
+    /* Enhanced filter bar */
+    .product-filters {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-btn {
+      white-space: nowrap;
+    }
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+      padding: 32px;
+      background: rgba(0,198,255,0.03);
+      border-radius: 16px;
+      border: 1px solid rgba(0,198,255,0.08);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-item .stat-label {
+      font-size: 13px;
+      color: var(--gray-2);
+      margin-top: 8px;
+    }
+    @media (max-width: 768px) {
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 20px;
+      }
+      .stat-item .stat-number {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -26,6 +126,8 @@
           <a href="../">首页</a>
           <a href="../products/" class="active">产品中心</a>
           <a href="../solutions/">行业方案</a>
+          <a href="../news/">新闻动态</a>
+          <a href="../shop/">在线商城</a>
           <a href="../about/">关于我们</a>
           <a href="../contact/">联系我们</a>
         </div>
@@ -54,259 +156,914 @@
         <span>产品中心</span>
       </div>
       <h1>产品中心</h1>
-      <p style="color:var(--gray-2);margin-top:8px;">三大系列推拉自锁连接器，兼容LEMO/ODU，全场景覆盖</p>
+      <p style="color:var(--gray-2);margin-top:8px;">800+系列 20000余款推拉自锁连接器，兼容LEMO/ODU，全场景覆盖</p>
     </div>
   </div>
 
-  <!-- Product List -->
-  <section class="section">
+  <!-- Stats Bar -->
+  <section class="section" style="padding-bottom:0;">
     <div class="container">
+      <div class="stats-bar fade-in">
+        <div class="stat-item">
+          <div class="stat-number">800+</div>
+          <div class="stat-label">产品系列</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">20000+</div>
+          <div class="stat-label">产品型号</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">11</div>
+          <div class="stat-label">产品大类</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10000+</div>
+          <div class="stat-label">服务客户</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Series Overview -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 style="margin-bottom:32px;">产品系列概览</h2>
+      <div class="series-overview fade-in">
+      <div class="series-card" data-series="b">
+        <div class="series-card-image"><img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520502_1639033379.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="金属B系列" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="series-card-body">
+          <h3>金属B系列</h3>
+          <p>推拉自锁连接器，兼容LEMO B系列</p>
+          <span class="series-card-count">5款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="k">
+        <div class="series-card-image"><img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520913_1639040538.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="金属K系列" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="series-card-body">
+          <h3>金属K系列</h3>
+          <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+          <span class="series-card-count">16款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="s">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">S Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>金属S系列</h3>
+          <p>超微型推拉自锁连接器</p>
+          <span class="series-card-count">0款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="f">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">F Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>金属F系列</h3>
+          <p>推拉自锁连接器，全黑/定制型</p>
+          <span class="series-card-count">2款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="t">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">T Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>金属T系列</h3>
+          <p>推拉自锁连接器，高压型</p>
+          <span class="series-card-count">0款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="p">
+        <div class="series-card-image"><img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21521876_1639105233.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="塑料P系列" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="series-card-body">
+          <h3>塑料P系列</h3>
+          <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+          <span class="series-card-count">13款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="hirose">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">Hirose Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>广濑系列</h3>
+          <p>兼容广濑(Hirose)连接器</p>
+          <span class="series-card-count">1款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="threaded">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">Threaded Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>螺纹式连接器</h3>
+          <p>螺纹锁紧式连接器，高可靠性</p>
+          <span class="series-card-count">0款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="newenergy">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">New Energy Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>新能源连接器</h3>
+          <p>新能源汽车与储能连接器</p>
+          <span class="series-card-count">0款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="cable">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">Custom Cable</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>线束定制</h3>
+          <p>定制航插线束、高柔屏蔽拖链线、工业相机线缆</p>
+          <span class="series-card-count">4款产品</span>
+        </div>
+      </div>
+      <div class="series-card" data-series="pneumatic">
+        <div class="series-card-image"><svg viewBox="0 0 200 120" width="200" height="120"><rect width="200" height="120" fill="rgba(0,198,255,0.05)"/><text x="100" y="65" text-anchor="middle" fill="rgba(0,198,255,0.4)" font-size="24" font-weight="700">Pneumatic Series</text></svg>
+        </div>
+        <div class="series-card-body">
+          <h3>气路连接器</h3>
+          <p>气路/液路连接器</p>
+          <span class="series-card-count">1款产品</span>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Product List -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">产品明细</h2>
       <!-- Filters -->
       <div class="product-filters">
         <button class="filter-btn active" data-filter="all">全部系列</button>
         <button class="filter-btn" data-filter="b">B系列 推拉自锁</button>
-        <button class="filter-btn" data-filter="k">K系列 方形外壳</button>
+        <button class="filter-btn" data-filter="k">K系列 防水型</button>
         <button class="filter-btn" data-filter="s">S系列 超微型</button>
+        <button class="filter-btn" data-filter="f">F系列 定制型</button>
+        <button class="filter-btn" data-filter="t">T系列 高压型</button>
+        <button class="filter-btn" data-filter="p">P系列 塑料型</button>
+        <button class="filter-btn" data-filter="hirose">广濑系列</button>
+        <button class="filter-btn" data-filter="threaded">螺纹式</button>
+        <button class="filter-btn" data-filter="newenergy">新能源</button>
+        <button class="filter-btn" data-filter="cable">线束定制</button>
+        <button class="filter-btn" data-filter="pneumatic">气路</button>
+
       </div>
 
       <!-- Product Grid -->
       <div class="product-list-grid">
-        <!-- B Series Products -->
         <div class="product-item" data-series="b">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520502_1639033379.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="00B金属连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-02</h4>
-            <p>2芯推拉自锁连接器，微型设计</p>
+            <h4>00B金属连接器</h4>
+            <p>推拉自锁连接器，兼容LEMO B系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">2芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">500V</span>
-              <span class="spec-tag">5A</span>
+              <span class="spec-tag">金属B系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="b">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520224_1639030986.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="0B金属连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-04</h4>
-            <p>4芯推拉自锁连接器，信号传输型</p>
+            <h4>0B金属连接器</h4>
+            <p>推拉自锁连接器，兼容LEMO B系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">4芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">500V</span>
-              <span class="spec-tag">5A</span>
+              <span class="spec-tag">金属B系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="b">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520175_1639030212.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="1B金属连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-08</h4>
-            <p>8芯推拉自锁连接器，多信号型</p>
+            <h4>1B金属连接器</h4>
+            <p>推拉自锁连接器，兼容LEMO B系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">8芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">500V</span>
-              <span class="spec-tag">3A</span>
+              <span class="spec-tag">金属B系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="b">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10759/21517938_1638945534.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="2B金属连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-16</h4>
-            <p>16芯推拉自锁连接器，高密度型</p>
+            <h4>2B金属连接器</h4>
+            <p>推拉自锁连接器，兼容LEMO B系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">16芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">250V</span>
-              <span class="spec-tag">2A</span>
+              <span class="spec-tag">金属B系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="b">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10759/21517807_1638943862.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="3B金属连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-32</h4>
-            <p>32芯推拉自锁连接器，混合信号型</p>
+            <h4>3B金属连接器</h4>
+            <p>推拉自锁连接器，兼容LEMO B系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">32芯</span>
-              <span class="spec-tag">IP67</span>
-              <span class="spec-tag">250V</span>
-              <span class="spec-tag">2A</span>
+              <span class="spec-tag">金属B系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
-        <div class="product-item" data-series="b">
+        <div class="product-item" data-series="k">
           <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
-            </svg>
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520913_1639040538.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="0K防水连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
           </div>
           <div class="product-item-body">
-            <h4>JY-B-64</h4>
-            <p>64芯推拉自锁连接器，超高密度型</p>
+            <h4>0K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">64芯</span>
-              <span class="spec-tag">IP67</span>
-              <span class="spec-tag">250V</span>
-              <span class="spec-tag">1A</span>
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
-        <!-- K Series Products -->
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10766/21530990_1639374535.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="1K防水连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="product-item-body">
+            <h4>1K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10766/21530998_1639374618.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="2K防水连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="product-item-body">
+            <h4>2K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
         <div class="product-item" data-series="k">
           <div class="product-item-image">
             <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <rect x="35" y="35" width="30" height="30" rx="4" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
             </svg>
           </div>
           <div class="product-item-body">
-            <h4>JY-K-03</h4>
-            <p>3芯方形连接器，面板安装型</p>
+            <h4>3K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">3芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">面板安装</span>
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="k">
           <div class="product-item-image">
             <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <rect x="35" y="35" width="30" height="30" rx="4" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
             </svg>
           </div>
           <div class="product-item-body">
-            <h4>JY-K-26</h4>
-            <p>26芯方形连接器，高密度型</p>
+            <h4>5K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">26芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">高密度</span>
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
-
         <div class="product-item" data-series="k">
           <div class="product-item-image">
             <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="60" height="60" rx="8" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <rect x="35" y="35" width="30" height="30" rx="4" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
             </svg>
           </div>
           <div class="product-item-body">
-            <h4>JY-K-104</h4>
-            <p>104芯方形连接器，超高密度型</p>
+            <h4>金属0K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
             <div class="product-item-specs">
-              <span class="spec-tag">104芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">超高密度</span>
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>金属1K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>金属2K防水连接器</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>防水0K外固定插座</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>防水1K外固定插座</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>防水2K外固定插座</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>防水0K长弯针插座</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>防水1K长弯针插座</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>0K防水帽</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>1K防水帽</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="k">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>2K防水帽</h4>
+            <p>防水型推拉自锁连接器，兼容LEMO K系列</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属K系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="f">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>F系列全黑色连接器</h4>
+            <p>推拉自锁连接器，全黑/定制型</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属F系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="f">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>聚英定制迷你连接器</h4>
+            <p>推拉自锁连接器，全黑/定制型</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">金属F系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21521876_1639105233.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="0P塑料连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="product-item-body">
+            <h4>0P塑料连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21520968_1639041731.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="1P塑料连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="product-item-body">
+            <h4>1P塑料连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <img src="https://aimg8.dlssyht.cn/u/1961716/product/10761/21521038_1639042905.jpg?x-oss-process=image/resize,m_lfit,w_200,h_200,limit_0" alt="2P塑料连接器" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:8px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="product-item-body">
+            <h4>2P塑料连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料0P连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料0P长弯针插座</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P单芯连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P双键位连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P纯白色连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P气路连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P一体式插座</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P对接浮动式插座</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="p">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料2P连接器</h4>
+            <p>塑料外壳推拉自锁连接器，轻量化设计</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">塑料P系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="hirose">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>HR广濑工业相机电源线</h4>
+            <p>兼容广濑(Hirose)连接器</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">广濑系列</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="cable">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>定制航插线束</h4>
+            <p>定制航插线束、高柔屏蔽拖链线、工业相机线缆</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">线束定制</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="cable">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>高柔屏蔽拖链线</h4>
+            <p>定制航插线束、高柔屏蔽拖链线、工业相机线缆</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">线束定制</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="cable">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>工业相机网线</h4>
+            <p>定制航插线束、高柔屏蔽拖链线、工业相机线缆</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">线束定制</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="cable">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>HR广濑工业相机电源线</h4>
+            <p>定制航插线束、高柔屏蔽拖链线、工业相机线缆</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">线束定制</span>
+              <span class="spec-tag">推拉自锁</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-item" data-series="pneumatic">
+          <div class="product-item-image">
+            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="8" fill="rgba(0,198,255,0.3)"/>
+            </svg>
+          </div>
+          <div class="product-item-body">
+            <h4>塑料1P气路连接器</h4>
+            <p>气路/液路连接器</p>
+            <div class="product-item-specs">
+              <span class="spec-tag">气路连接器</span>
+              <span class="spec-tag">推拉自锁</span>
             </div>
           </div>
         </div>
 
-        <!-- S Series Products -->
-        <div class="product-item" data-series="s">
-          <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="30" ry="38" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <ellipse cx="50" cy="50" rx="15" ry="22" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
-            </svg>
-          </div>
-          <div class="product-item-body">
-            <h4>JY-S-02</h4>
-            <p>2芯超微型连接器，极小外径</p>
-            <div class="product-item-specs">
-              <span class="spec-tag">2芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">≤8mm</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item" data-series="s">
-          <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="30" ry="38" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <ellipse cx="50" cy="50" rx="15" ry="22" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
-            </svg>
-          </div>
-          <div class="product-item-body">
-            <h4>JY-S-05</h4>
-            <p>5芯超微型连接器，精密仪器型</p>
-            <div class="product-item-specs">
-              <span class="spec-tag">5芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">≤10mm</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-item" data-series="s">
-          <div class="product-item-image">
-            <svg viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="30" ry="38" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="3"/>
-              <ellipse cx="50" cy="50" rx="15" ry="22" fill="none" stroke="rgba(0,198,255,0.3)" stroke-width="2"/>
-              <circle cx="50" cy="50" r="5" fill="rgba(0,198,255,0.3)"/>
-            </svg>
-          </div>
-          <div class="product-item-body">
-            <h4>JY-S-10</h4>
-            <p>10芯超微型连接器，多信号型</p>
-            <div class="product-item-specs">
-              <span class="spec-tag">10芯</span>
-              <span class="spec-tag">IP50</span>
-              <span class="spec-tag">≤12mm</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -338,9 +1095,10 @@
         </div>
         <div class="footer-column">
           <h4>产品中心</h4>
-          <a href="../products/b-series/">B系列</a>
-          <a href="../products/k-series/">K系列</a>
-          <a href="../products/s-series/">S系列</a>
+          <a href="../products/">金属B/K/S/F/T系列</a>
+          <a href="../products/">塑料P系列</a>
+          <a href="../products/">广濑/螺纹/新能源</a>
+          <a href="../products/">线束定制/气路</a>
         </div>
         <div class="footer-column">
           <h4>行业方案</h4>
@@ -369,5 +1127,43 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+    // Enhanced filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.product-item').forEach(item => {
+          if (filter === 'all' || item.dataset.series === filter) {
+            item.style.display = '';
+            item.style.animation = 'fadeInUp 0.4s ease forwards';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Series card click -> filter
+    document.querySelectorAll('.series-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const series = this.dataset.series;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.dataset.filter === series) btn.classList.add('active');
+        });
+        document.querySelectorAll('.product-item').forEach(item => {
+          if (item.dataset.series === series) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        // Scroll to product list
+        document.querySelector('.product-filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>
