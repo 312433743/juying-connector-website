@@ -1,0 +1,292 @@
+{
+  "company": {
+    "name_zh": "前海聚英（深圳）精密技术有限公司",
+    "name_en": "Qianhai Joying (Shenzhen) Precision Technology Co., Ltd.",
+    "brand": "JOYING",
+    "founded": "2007-03-31",
+    "registered": "2016-12-27",
+    "legal_person": "黄丽银",
+    "capital": "500万人民币",
+    "employees": "约100人",
+    "revenue": "约2000万",
+    "customers": "10000+",
+    "product_series": "800+",
+    "product_models": "20000+",
+    "custom_models": "8000+",
+    "certifications": ["高新技术企业", "ISO9001质量管理体系", "环境管理体系认证", "职业健康安全管理体系认证", "科技型中小企业(2025)"],
+    "address": "深圳市宝安区松岗街道沙浦围第一工业园11栋（前海聚英产业园）",
+    "registered_address": "广东前海深港合作区前湾一路1号A栋201室（入驻深圳市前海商务秘书有限公司）",
+    "phones": {
+      "hotline": "0755-23322028",
+      "hotline2": "0755-88218887",
+      "emergency": ["18188608848", "15014718674"],
+      "sales": ["17704003132", "17704003182", "15323775535", "15014718674"]
+    },
+    "email": "jyjm@18sz.cn",
+    "icp": "粤ICP备19151467号-1",
+    "work_hours": "周一至周六 9:00-18:00",
+    "website": "www.18sz.cn",
+    "motto": "聚五湖科技 纳四海精英"
+  },
+
+  "history": [
+    {"year": "2007", "event": "始创于2007年3月31日，前身聚英电子经营部，秉承'聚五湖科技 纳四海精英'的理念创立"},
+    {"year": "2014", "event": "受深圳前海自贸区邀请入驻，公司更名为前海聚英"},
+    {"year": "2020", "event": "建成自有产业园——前海聚英产业园，实现生产与销售一体化"},
+    {"year": "至今", "event": "800+系列、20000余款产品，服务海内外10000+客户，定制超8000款产品"}
+  ],
+
+  "culture": {
+    "values": [
+      {"name": "尊重", "desc": "尊重每一位员工和客户，以平等的态度对待所有人"},
+      {"name": "平等", "desc": "扁平化管理，人人平等，人人有机会"},
+      {"name": "协作", "desc": "团队协作，共同成长，共同进步"},
+      {"name": "共赢", "desc": "与客户共赢，与员工共赢，与社会共赢"}
+    ],
+    "vision": "将前海聚英打造成国内一流的电、光、信号连接器的研发生产基地，为国防军工事业的发展做出新的贡献",
+    "positioning": "LEMO/ODU的国产替代方案",
+    "competitors": ["LEMO", "ODU", "Fischer", "Hirose", "中航光电"]
+  },
+
+  "product_series": [
+    {
+      "id": "b-series",
+      "name_zh": "金属B系列",
+      "name_en": "Metal B Series",
+      "desc": "金属推拉自锁连接器，兼容LEMO B系列，高可靠性，广泛用于医疗器械、工业自动化",
+      "models": ["EGG.0B.305", "EGG.0B.307", "EXG.0B.305", "EXG.0B.307", "ZEG.0B.305", "B/EB/EGG/EXG/ZEG等"],
+      "features": ["推拉自锁", "金属外壳", "屏蔽性能", "多芯位2-64芯", "兼容LEMO B"],
+      "applications": ["医疗器械", "工业自动化", "测试测量", "通讯设备"]
+    },
+    {
+      "id": "k-series",
+      "name_zh": "K系列防水",
+      "name_en": "K Series Waterproof",
+      "desc": "防水对接式连接器，方形外壳设计，防水等级IP50/IP67，适用于恶劣环境",
+      "models": ["FGG.0B.305", "KGG.1B.307", "THG/PHG/FHG/KGG/FGG等"],
+      "features": ["防水设计", "方形外壳", "对接式连接", "浮动式插座", "悬空自锁"],
+      "applications": ["工业设备", "轨道交通", "新能源", "户外设备"]
+    },
+    {
+      "id": "s-series",
+      "name_zh": "S系列超微型",
+      "name_en": "S Series Ultra-miniature",
+      "desc": "超微型推拉自锁连接器，体积小巧，适用于空间受限的精密设备",
+      "models": ["S系列0B/1B/2B等"],
+      "features": ["超微型设计", "推拉自锁", "轻量化", "高密度连接"],
+      "applications": ["无人机", "机器人", "传感器", "精密仪器"]
+    },
+    {
+      "id": "f-series",
+      "name_zh": "F系列",
+      "name_en": "F Series",
+      "desc": "推拉自锁连接器，多键位设计，防误插",
+      "models": ["F系列0B/1B等"],
+      "features": ["推拉自锁", "多键位防误插", "多种端接方式"],
+      "applications": ["音视频设备", "广播系统", "舞台灯光"]
+    },
+    {
+      "id": "t-series",
+      "name_zh": "T系列防水",
+      "name_en": "T Series Waterproof",
+      "desc": "防水推拉自锁连接器，圆形外壳，防水性能优异",
+      "models": ["T系列0B/1B等"],
+      "features": ["防水设计", "圆形外壳", "推拉自锁", "密封可靠"],
+      "applications": ["户外设备", "船舶", "石油勘探", "深海作业"]
+    },
+    {
+      "id": "p-series",
+      "name_zh": "塑料P系列",
+      "name_en": "Plastic P Series",
+      "desc": "塑料推拉自锁连接器，轻量化设计，FDA批准材料，适用于医疗美容设备",
+      "models": ["PAG.0B.305", "PKG.1B.307", "PHG/PEG/PAG/PKG等"],
+      "features": ["塑料外壳", "FDA批准材料(PSU/PEI)", "轻量化", "色彩编码", "Pantone色标定制"],
+      "applications": ["医疗美容", "牙科设备", "康复器械", "家用医疗"]
+    },
+    {
+      "id": "n-series",
+      "name_zh": "N系列定制",
+      "name_en": "N Series Customization",
+      "desc": "定制化连接器解决方案，可根据客户需求定制外观、芯数、端接方式等",
+      "models": ["按客户需求定制"],
+      "features": ["外观定制", "芯数定制", "端接方式定制", "线缆定制", "一站式方案"],
+      "applications": ["军工电子", "航空航天", "特殊设备", "OEM/ODM"]
+    }
+  ],
+
+  "applications": [
+    {
+      "id": "medical",
+      "name_zh": "医疗器械",
+      "name_en": "Medical Devices",
+      "desc": "FDA批准材料，PSU/PEI医用级材质，推拉自锁快速连接，断开后自动密封防泄漏",
+      "icon": "🏥"
+    },
+    {
+      "id": "industrial",
+      "name_zh": "工业自动化",
+      "name_en": "Industrial Automation",
+      "desc": "高密度快速插拔，工业机器人、自动化产线、PLC控制系统首选连接方案",
+      "icon": "🏭"
+    },
+    {
+      "id": "military",
+      "name_zh": "军工电子",
+      "name_en": "Military & Defense",
+      "desc": "高可靠性、耐恶劣环境，服务于航空航天、舰艇、兵器等领域",
+      "icon": "🛡️"
+    },
+    {
+      "id": "robotics",
+      "name_zh": "机器人",
+      "name_en": "Robotics",
+      "desc": "工业机器人、协作机器人、ROV深海作业机器人连接方案",
+      "icon": "🤖"
+    },
+    {
+      "id": "aerospace",
+      "name_zh": "航空航天",
+      "name_en": "Aerospace",
+      "desc": "高精密连接器，轻量化设计，满足航空领域严苛要求",
+      "icon": "✈️"
+    },
+    {
+      "id": "low-altitude",
+      "name_zh": "低空经济",
+      "name_en": "Low-altitude Economy",
+      "desc": "无人机、eVTOL飞行器连接方案，轻量高可靠",
+      "icon": "🚁"
+    },
+    {
+      "id": "communication",
+      "name_zh": "通信",
+      "name_en": "Communication",
+      "desc": "铁路通信、网络监控、信号传输连接方案",
+      "icon": "📡"
+    },
+    {
+      "id": "audio-video",
+      "name_zh": "音视频",
+      "name_en": "Audio/Video",
+      "desc": "舞台灯光、广播系统、专业音视频设备连接器",
+      "icon": "🎬"
+    },
+    {
+      "id": "automotive",
+      "name_zh": "汽车",
+      "name_en": "Automotive",
+      "desc": "新能源汽车、车载设备、石油勘探连接方案",
+      "icon": "🚗"
+    },
+    {
+      "id": "sensing",
+      "name_zh": "传感检测",
+      "name_en": "Sensing & Detection",
+      "desc": "高精尖传感器、工业相机图像传感、全球眼网络治安监控",
+      "icon": "🔍"
+    }
+  ],
+
+  "online_platforms": [
+    {
+      "name": "前海聚英官方企业店",
+      "platform": "淘宝",
+      "url": "https://www.taobao.com/list/dianpu/328734118.htm",
+      "type": "B2C零售"
+    },
+    {
+      "name": "深圳市前海聚英",
+      "platform": "淘宝",
+      "url": "https://www.taobao.com/list/dianpu/34322950.htm",
+      "type": "B2C零售"
+    },
+    {
+      "name": "前海聚英航空插推拉自锁",
+      "platform": "淘宝",
+      "url": "https://www.taobao.com/list/dianpu/305296228.htm",
+      "type": "B2C零售"
+    },
+    {
+      "name": "前海聚英(深圳)精密技术有限公司",
+      "platform": "1688阿里巴巴",
+      "url": "https://shop1843i6m74m700.1688.com/",
+      "type": "B2B批发"
+    },
+    {
+      "name": "Shenzhen Qianhai Joying Supply Chain Co., Ltd.",
+      "platform": "阿里巴巴国际站",
+      "url": "https://18sz.en.alibaba.com/",
+      "type": "B2B出口"
+    },
+    {
+      "name": "QianHai Joying(前海聚英)",
+      "platform": "立创商城",
+      "url": "https://list.szlcsc.com/brand/18911.html",
+      "type": "元器件商城"
+    },
+    {
+      "name": "JOYING/前海聚英",
+      "platform": "云汉芯城",
+      "url": "https://www.ickey.cn/brand/joying.html",
+      "type": "元器件商城"
+    },
+    {
+      "name": "前海聚英(深圳)精密技术有限公司",
+      "platform": "中国制造网",
+      "url": "https://3g.made-in-china.com/company-szqhjy/about.html",
+      "type": "B2B出口"
+    },
+    {
+      "name": "前海聚英",
+      "platform": "抖音",
+      "url": "https://www.douyin.com/user/MS4wLjABAAAAOyaYLQ933_EyBzEGokP5JIiUlGPHy0LWUPdTlGYqNaZTE0pP9MpGbxkfORAjh2v8",
+      "type": "短视频"
+    },
+    {
+      "name": "前海聚英圆形航插连接器",
+      "platform": "抖音",
+      "url": "https://www.douyin.com/user/MS4wLjABAAAASGshjFXMmL1AZDcdIzB6XCETh45bjMf7eBk1wsKyh0mTG24i5jiwGvNXkJvZrD35",
+      "type": "短视频"
+    },
+    {
+      "name": "前海聚英",
+      "platform": "微信公众号",
+      "url": "#",
+      "type": "内容平台"
+    },
+    {
+      "name": "前海聚英精密",
+      "platform": "微信公众号",
+      "url": "#",
+      "type": "内容平台"
+    }
+  ],
+
+  "news": [
+    {
+      "date": "2021-11-15",
+      "title": "前海聚英连接器应用及接线原理",
+      "category": "技术文章"
+    },
+    {
+      "date": "2021-11-15",
+      "title": "医疗连接器服务及产品方案",
+      "category": "行业方案"
+    },
+    {
+      "date": "2021-11-15",
+      "title": "圆形连接器产品介绍——金属B系列",
+      "category": "产品资讯"
+    },
+    {
+      "date": "2021-11-15",
+      "title": "前海聚英连接器 防水系列介绍",
+      "category": "产品资讯"
+    },
+    {
+      "date": "2025-09-08",
+      "title": "在深圳拥有18年连接器生产经验和研发",
+      "category": "公司动态"
+    }
+  ]
+}
