@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="前海聚英在线商城 - 淘宝、1688、阿里国际站、立创商城、云汉芯城等全平台店铺入口，一站式采购推拉自锁连接器。">
+  <title>在线商城 | 前海聚英 - 推拉自锁连接器</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .shop-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .shop-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .shop-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .shop-card:hover::before { opacity: 1; }
+    .shop-platform {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .platform-taobao { background: #fff3e0; color: #e65100; }
+    .platform-1688 { background: #fff8e1; color: #f57f17; }
+    .platform-alibaba { background: #e8f5e9; color: #2e7d32; }
+    .platform-szlcsc { background: #e3f2fd; color: #1565c0; }
+    .platform-ickey { background: #f3e5f5; color: #7b1fa2; }
+    .platform-mic { background: #fce4ec; color: #c62828; }
+    .platform-douyin { background: #f3e5f5; color: #4a148c; }
+    .platform-wechat { background: #e8f5e9; color: #1b5e20; }
+    .shop-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .shop-type {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .shop-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .shop-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 24px;
+      background: var(--gradient-primary);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s;
+      width: fit-content;
+    }
+    .shop-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,102,255,0.3);
+    }
+    .shop-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .shop-section-title h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .shop-section-title .badge {
+      background: var(--accent-primary);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .shop-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .social-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .social-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .social-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 16px;
+    }
+    .social-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .social-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="container">
+      <a href="../" class="logo">
+        <div class="logo-icon">JY</div>
+        <div class="logo-text">前海聚英<span>QIANHAI JUYING</span></div>
+      </a>
+      <nav class="nav">
+        <div class="nav-links" id="navLinks">
+          <a href="../">首页</a>
+          <a href="../products/">产品中心</a>
+          <a href="../solutions/">行业方案</a>
+          <a href="../shop/" class="active">在线商城</a>
+          <a href="../about/">关于我们</a>
+          <a href="../contact/">联系我们</a>
+        </div>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn">🌐 中文 <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          <div class="lang-dropdown">
+            <a href="../shop/" class="active">🇨🇳 中文</a>
+            <a href="/en/shop/">🇬🇧 English</a>
+          </div>
+        </div>
+      </nav>
+      <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-content">
+        <h1>在线商城</h1>
+        <p>全平台一站式采购 · 10+平台同步服务</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-commerce Platforms -->
+  <section class="section">
+    <div class="container">
+      <div class="shop-section-title">
+        <h3>🛒 电商平台</h3>
+        <span class="badge">7个平台</span>
+      </div>
+      <p style="color:var(--text-muted);margin-bottom:0">覆盖B2C零售、B2B批发、出口贸易全渠道，随时下单，快速发货</p>
+      
+      <div class="shop-grid">
+        <!-- 淘宝1 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-taobao">🛍️ 淘宝</div>
+          <div class="shop-name">前海聚英官方企业店</div>
+          <div class="shop-type">B2C零售 · 官方企业店</div>
+          <div class="shop-desc">官方直营店铺，全系列产品现货，支持定制，顺丰包邮。推拉自锁连接器、航空插头、防水连接器一站式选购。</div>
+          <a href="https://www.taobao.com/list/dianpu/328734118.htm" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 淘宝2 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-taobao">🛍️ 淘宝</div>
+          <div class="shop-name">深圳市前海聚英</div>
+          <div class="shop-type">B2C零售 · 专卖店</div>
+          <div class="shop-desc">推拉自锁连接器专卖，M12防水连接器、1K航空插头、0B穿墙式插座等热销产品，价格优惠。</div>
+          <a href="https://www.taobao.com/list/dianpu/34322950.htm" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 淘宝3 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-taobao">🛍️ 淘宝</div>
+          <div class="shop-name">前海聚英航空插推拉自锁</div>
+          <div class="shop-type">B2C零售 · 专营店</div>
+          <div class="shop-desc">航空插头专营店，推拉自锁系列齐全，FGG/EGG/EXG等各型号现货供应。</div>
+          <a href="https://www.taobao.com/list/dianpu/305296228.htm" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 1688 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-1688">🏭 1688阿里巴巴</div>
+          <div class="shop-name">前海聚英(深圳)精密技术有限公司</div>
+          <div class="shop-type">B2B批发 · 实力商家</div>
+          <div class="shop-desc">1688官方旗舰店，批量采购更优惠。64+款前海聚英优质商品，支持一件代发，品质商家认证。</div>
+          <a href="https://shop1843i6m74m700.1688.com/" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 阿里国际站 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-alibaba">🌍 阿里国际站</div>
+          <div class="shop-name">Shenzhen Qianhai Joying Supply Chain Co., Ltd.</div>
+          <div class="shop-type">B2B出口 · Gold Supplier</div>
+          <div class="shop-desc">Alibaba.com国际站金牌供应商，覆盖7大产品系列（B/K/S/F/T/P/N），支持全球贸易，安全支付。</div>
+          <a href="https://18sz.en.alibaba.com/" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 立创商城 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-szlcsc">🔧 立创商城</div>
+          <div class="shop-name">QianHai Joying(前海聚英)</div>
+          <div class="shop-type">元器件商城 · 正品保障</div>
+          <div class="shop-desc">立创商城品牌专区，提供高清引脚图、PCB焊盘图、3D模型及Datasheet数据手册，支持选型与设计参考。</div>
+          <a href="https://list.szlcsc.com/brand/18911.html" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 云汉芯城 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-ickey">⚡ 云汉芯城</div>
+          <div class="shop-name">JOYING/前海聚英</div>
+          <div class="shop-type">元器件商城 · 原厂正品</div>
+          <div class="shop-desc">云汉芯城JOYING品牌专区，连接器产品供应，支持账期服务、2小时发货、技术资料下载。</div>
+          <a href="https://www.ickey.cn/brand/joying.html" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="shop-divider container"><div></div></div>
+
+  <!-- Social & Content Platforms -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="shop-section-title">
+        <h3>📱 内容平台</h3>
+        <span class="badge">4个账号</span>
+      </div>
+      <p style="color:var(--text-muted);margin-bottom:40px">关注我们，获取最新产品资讯、技术视频和行业动态</p>
+      
+      <div class="social-grid">
+        <!-- 抖音1 -->
+        <div class="social-card">
+          <div class="social-icon" style="background:#f3e5f5;color:#4a148c;">🎵</div>
+          <h4>前海聚英</h4>
+          <p>官方抖音号 · 产品演示与工厂实拍</p>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAAOyaYLQ933_EyBzEGokP5JIiUlGPHy0LWUPdTlGYqNaZTE0pP9MpGbxkfORAjh2v8" target="_blank" class="shop-link" style="font-size:13px;padding:8px 20px;">关注 →</a>
+        </div>
+
+        <!-- 抖音2 -->
+        <div class="social-card">
+          <div class="social-icon" style="background:#f3e5f5;color:#4a148c;">🎶</div>
+          <h4>前海聚英圆形航插连接器</h4>
+          <p>产品号 · 连接器专业知识分享</p>
+          <a href="https://www.douyin.com/user/MS4wLjABAAAASGshjFXMmL1AZDcdIzB6XCETh45bjMf7eBk1wsKyh0mTG24i5jiwGvNXkJvZrD35" target="_blank" class="shop-link" style="font-size:13px;padding:8px 20px;">关注 →</a>
+        </div>
+
+        <!-- 微信公众号1 -->
+        <div class="social-card">
+          <div class="social-icon" style="background:#e8f5e9;color:#1b5e20;">💬</div>
+          <h4>前海聚英</h4>
+          <p>微信公众号 · 公司动态与行业资讯</p>
+          <a href="#" class="shop-link" style="font-size:13px;padding:8px 20px;background:#07c160;">微信搜索关注</a>
+        </div>
+
+        <!-- 微信公众号2 -->
+        <div class="social-card">
+          <div class="social-icon" style="background:#e8f5e9;color:#1b5e20;">📢</div>
+          <h4>前海聚英精密</h4>
+          <p>微信公众号 · 技术文章与产品发布</p>
+          <a href="#" class="shop-link" style="font-size:13px;padding:8px 20px;background:#07c160;">微信搜索关注</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="shop-divider container"><div></div></div>
+
+  <!-- B2B Export -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="shop-section-title">
+        <h3>🌐 外贸平台</h3>
+        <span class="badge">2个平台</span>
+      </div>
+      <p style="color:var(--text-muted);margin-bottom:0">面向全球市场，支持多语言、多币种交易</p>
+      
+      <div class="shop-grid" style="margin-top:24px;">
+        <!-- 中国制造网 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-mic">🌏 中国制造网</div>
+          <div class="shop-name">前海聚英(深圳)精密技术有限公司</div>
+          <div class="shop-type">B2B出口 · 制造商认证</div>
+          <div class="shop-desc">中国制造网官方企业页，展示公司资质、产品目录、出口能力，面向全球买家。</div>
+          <a href="https://3g.made-in-china.com/company-szqhjy/about.html" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+
+        <!-- 阿里国际站重复展示 -->
+        <div class="shop-card">
+          <div class="shop-platform platform-alibaba">🌍 Alibaba.com</div>
+          <div class="shop-name">Qianhai Joying International</div>
+          <div class="shop-type">B2B出口 · Gold Supplier 3年</div>
+          <div class="shop-desc">Gold Supplier金牌供应商认证，7大产品系列全线上架，Trade Assurance交易保障，支持全球配送。</div>
+          <a href="https://18sz.en.alibaba.com/" target="_blank" class="shop-link">进入店铺 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="logo-icon">JY</div>
+            <div class="logo-text">前海聚英<span>QIANHAI JUYING</span></div>
+          </div>
+          <p class="footer-desc">专业推拉自锁连接器制造商<br>LEMO/ODU国产替代方案</p>
+        </div>
+        <div class="footer-col">
+          <h4>产品中心</h4>
+          <a href="../products/b-series/">金属B系列</a>
+          <a href="../products/k-series/">K系列防水</a>
+          <a href="../products/s-series/">S系列超微型</a>
+        </div>
+        <div class="footer-col">
+          <h4>在线商城</h4>
+          <a href="https://www.taobao.com/list/dianpu/328734118.htm" target="_blank">淘宝企业店</a>
+          <a href="https://shop1843i6m74m700.1688.com/" target="_blank">1688旗舰店</a>
+          <a href="https://18sz.en.alibaba.com/" target="_blank">阿里国际站</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <p>全国统一客服热线</p>
+          <p style="font-weight:700;font-size:18px;">0755-23322028</p>
+          <p>0755-88218887</p>
+          <p>jyjm@18sz.cn</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright 2014-2025 前海聚英（深圳）精密技术有限公司 All rights reserved</p>
+        <p>粤ICP备19151467号-1</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
